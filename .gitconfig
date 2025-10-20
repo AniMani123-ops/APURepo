@@ -1,0 +1,9 @@
+[user]
+	name = AniMani123-ops
+	email = anirvin.mani24_ug@apu.edu.in
+[init]
+	defaultBranch = main
+[color]
+	ui = auto
+[core]
+	editor = nano

@@ -1,0 +1,46 @@
+#include <stdio.h>
+
+void reverse(int* arr, int start, int end) {
+    while (start < end) {
+        int temp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = temp;
+        start++;
+        end--;
+    }
+}
+
+void rotate(int* nums, int numsSize, int k) {
+    if (numsSize == 0 || k % numsSize == 0) {
+        return;
+    }
+
+    k %= numsSize;
+
+    reverse(nums, 0, numsSize - k - 1);
+    reverse(nums, numsSize - k, numsSize - 1);
+    reverse(nums, 0, numsSize - 1);
+}
+
+void printArray(int* nums, int numsSize) {
+    for (int i = 0; i < numsSize; i++) {
+        printf("%d ", nums[i]);
+    }
+    printf("\n");
+}
+
+int main() {
+    int nums[] = {3, 4, 1, 2, 9, 7};
+    int numsSize = sizeof(nums) / sizeof(nums[0]);
+    int k = 2;
+
+    printf("Original array: ");
+    printArray(nums, numsSize);
+
+    rotate(nums, numsSize, k);
+
+    printf("Array after rotating by %d steps: ", k);
+    printArray(nums, numsSize);
+
+    return 0;
+}
