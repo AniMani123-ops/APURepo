@@ -1,1 +1,2 @@
-Git Repository for the LLP assigment
+Git Repository for Information Sciences Coursework
+
